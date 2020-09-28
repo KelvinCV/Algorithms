@@ -3,25 +3,23 @@ import java.util.Scanner;
 public class Oitavo {
     int n;
     int q;
-    int nDigit = 0;
-    int nova [] = new int[1024];
-    int r;
+    int resto[] = new int[1024];// 1024(10) = 100 0000 0000(2)
+    int i = 0;
     Scanner prompt = new Scanner(System.in);
 
     public void conversaoBase() {
-    System.out.println("Informe um número inteiro decimal:");
-    n = prompt.nextInt();
-    q = n;
-    do {
-        r = q % 2;
-        nova[nDigit] = r;
-        nDigit++;
-        q = q / 2;
-    }
-    while (q != 0);
-        System.out.println("Número " + n + " na base binária: ");
-        for (int i = nDigit - 1; i >= 0; i--) {
-            System.out.print(nova[i]);
+        System.out.println("Informe um número inteiro decimal:");
+        n = prompt.nextInt();
+        q = n;
+        do {
+            resto[i] = q % 2;
+            i++;
+            q = q / 2;
+        }
+        while (q != 0);
+        System.out.println("Número " + n + " na base binária(2): ");
+        for (int i = this.i - 1; i >= 0; i--) {
+            System.out.print(resto[i]);
         }
     }
 }
